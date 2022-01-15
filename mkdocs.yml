@@ -1,0 +1,23 @@
+site_name: Esp32-101-board
+site_description: ESP32-101-board reference site
+
+nav:
+  - Home: index.md
+  - Инфо: boardInfo.md
+  
+theme:
+  name: material
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate 
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+        
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
