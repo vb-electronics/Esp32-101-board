@@ -36,6 +36,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -426,19 +428,6 @@
 <h1 id="gpios">Референция за GPIOs</h1>
 <h2 id="esp32-101-board">Esp32-101-board</h2>
 <h3 id="gpios-101-board">Таблица GPIOs 101-board</h3>
-<style>
-.label {
-  color: white;
-  padding: 0px;
-  border-radius: 2px;
-}
-.success {background-color: #04AA6D;} /* Green */
-.ADC2 {background-color: #2196F3;} /* Blue */
-.UART0 {background-color: #ff9800;} /* Orange */
-.GPIO {background-color: #f44336;} /* Red */ 
-.other {background-color: #e7e7e7; color: black;} /* Gray */ 
-</style>
-
 <p>Връзки на периферните модули към микроконтролера</p>
 <details class="summary" open="open">
 <summary>Esp32-101-board</summary>
@@ -453,7 +442,7 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><span class="label GPIO">GPIO2</span>  / <code>D2</code></td>
+<td align="center"><code>GPIO2</code>  / <code>D2</code></td>
 <td align="center">LED-G/PO2</td>
 <td align="center">Зелен  светодиод /  транзисторен  изход 2</td>
 <td align="center">Digital Output, PWM</td>
@@ -552,19 +541,19 @@
 <td align="center"><code>GPIO27</code> / <code>D27</code></td>
 <td align="center">TS1</td>
 <td align="center">Сензор за  допир “TS1”</td>
-<td align="center">Touch</td>
+<td align="center">TOUCH</td>
 </tr>
 <tr>
 <td align="center"><code>GPIO32</code> /  <code>D32</code></td>
 <td align="center">TS3</td>
 <td align="center">Сензор за  допир “TS3”</td>
-<td align="center">Touch</td>
+<td align="center">TOUCH</td>
 </tr>
 <tr>
 <td align="center"><code>GPIO33</code> /  <code>D33</code></td>
 <td align="center">TS2</td>
 <td align="center">Сензор за  допир “TS2”</td>
-<td align="center">Touch</td>
+<td align="center">TOUCH</td>
 </tr>
 <tr>
 <td align="center"><code>GPIO34</code> / <code>D34</code></td>
@@ -630,42 +619,42 @@
 <tbody>
 <tr>
 <td align="center">0  / -</td>
-<td align="center"><code>GPIO0</code> , <code>ADC2_CH1</code>, <code>Touch1</code></td>
+<td align="center"><code>GPIO0</code> , <span class="ADC2">ADC2_CH1</span> , <span class="TOUCH">TOUCH1</span></td>
 <td align="center">pull-up; не  е изведен на  пин; свързан  към бутон “BOOT”; извежда  PWM сигнал  при  стартиране  на  контролера</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">1  / TX0</td>
-<td align="center"><code>GPIO1</code>, <code>UART0_TX</code></td>
+<td align="center"><code>GPIO1</code>, <span class="UART0">UART0_TX</span></td>
 <td align="center">свързан  към USB-преобразувателя;  извежда debug информация  при  стартиране</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">2  / D2</td>
-<td align="center"><code>GPIO2</code>, <code>ADC2_CH2</code>, <code>Touch2</code></td>
+<td align="center"><code>GPIO2</code>, <span class="ADC2">ADC2_CH2</span>, <span class="TOUCH">TOUCH2</span></td>
 <td align="center">pull-down</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">3  / RX0</td>
-<td align="center"><code>GPIO3</code>, <code>UART0_RX</code></td>
+<td align="center"><code>GPIO3</code>, <span class="UART0">UART0_RX</span></td>
 <td align="center">свързан  към USB-преобразувателя; извежда  високо ниво  при  стартиране</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">4  / D4</td>
-<td align="center"><code>GPIO4</code>, <code>ADC2_CH0</code>, <code>Touch0</code></td>
+<td align="center"><code>GPIO4</code>, <span class="ADC2">ADC2_CH0</span>, <span class="TOUCH">TOUCH0</span></td>
 <td align="center">pull-down</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">5  / D5</td>
-<td align="center"><code>GPIO5</code>, <code>VSPI_CS</code></td>
+<td align="center"><code>GPIO5</code>, <span class="VSPI">VSPI_CS</span></td>
 <td align="center">pull-up; извежда  PWM сигнал  при  стартиране  на  контролера</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
@@ -679,140 +668,140 @@
 </tr>
 <tr>
 <td align="center">12 / D12</td>
-<td align="center"><code>GPIO12</code>, <code>ADC2_CH5</code>, <code>Touch5</code>, <code>HSPI_MISO</code></td>
+<td align="center"><code>GPIO12</code>, <span class="ADC2">ADC2_CH5</span> , <span class="TOUCH">TOUCH5</span>, <span class="HSPI">HSPI_MISO</span></td>
 <td align="center">pull-down; контролерът  не стартира  ако по време  на включване  или рестарт  има високо  ниво</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">13 / D13</td>
-<td align="center"><code>GPIO13</code>, <code>ADC2_CH4,</code> <code>Touch4</code>, <code>HSPI_MOSI</code></td>
+<td align="center"><code>GPIO13</code>, <span class="ADC2">ADC2_CH4</span>,<span class="TOUCH">TOUCH4</span>, <span class="HSPI">HSPI_MOSI</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">14 / D14</td>
-<td align="center"><code>GPIO14</code>, <code>ADC2_CH6</code>, <code>Touch6</code>, <code>HSPI_CLK</code></td>
+<td align="center"><code>GPIO14</code>, <span class="ADC2">ADC2_CH6</span>, <span class="TOUCH">TOUCH6</span>, <span class="HSPI">HSPI_CLK</span></td>
 <td align="center">извежда PWM сигнал  при  стартиране  на  контролера</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">15 / D15</td>
-<td align="center"><code>GPIO15</code>, <code>ADC2_CH3</code>, <code>Touch3</code>, <code>HSPI_CS</code></td>
+<td align="center"><code>GPIO15</code>, <span class="ADC2">ADC2_CH3</span>, <span class="TOUCH">TOUCH3</span>, <span class="HSPI">HSPI_CS</span></td>
 <td align="center">pull-up;  извежда PWM сигнал  при  стартиране  на  контролера</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">16 / RX2</td>
-<td align="center"><code>GPIO16,</code> <code>UART2_RX</code></td>
+<td align="center"><code>GPIO16,</code> <span class="UART2">UART2_RX</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">17 / TX2</td>
-<td align="center"><code>GPIO17</code>, <code>UART2_TX</code></td>
+<td align="center"><code>GPIO17</code>, <span class="UART2">UART2_TX</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">18 / D18</td>
-<td align="center"><code>GPIO18,</code> <code>VSPI_CLK</code></td>
+<td align="center"><code>GPIO18,</code> <span class="VSPI">VSPI_CLK</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">19 / D19</td>
-<td align="center"><code>GPIO19</code>, <code>VSPI_MISO</code></td>
+<td align="center"><code>GPIO19</code>, <span class="VSPI">VSPI_MISO</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">21 / D21</td>
-<td align="center"><code>GPIO21</code>, <code>I2C_SDA</code></td>
+<td align="center"><code>GPIO21</code>, <span class="I2C">I2C_SDA</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">22 / D22</td>
-<td align="center"><code>GPIO22,</code> <code>I2C_SCL</code></td>
+<td align="center"><code>GPIO22,</code> <span class="I2C">I2C_SCL</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">23 / D23</td>
-<td align="center"><code>GPIO23</code>, <code>VSPI_MOSI</code></td>
+<td align="center"><code>GPIO23</code>, <span class="VSPI">VSPI_MOSI</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">25 / D25</td>
-<td align="center"><code>GPIO25</code>, <code>ADC2_CH8</code>, <code>DAC</code>, <code>I2S</code></td>
+<td align="center"><code>GPIO25</code>, <span class="ADC2">ADC2_CH8</span>, <span class="DAC">DAC</span>, <span class="I2S">I2S</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">26 / D26</td>
-<td align="center"><code>GPIO26</code>, <code>ADC2_CH9</code>, <code>DAC</code>, <code>I2S</code></td>
+<td align="center"><code>GPIO26</code>, <span class="ADC2">ADC2_CH9</span>, <span class="DAC">DAC</span>, <span class="I2S">I2S</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">27 / D27</td>
-<td align="center"><code>GPIO27</code>, <code>ADC2_CH7</code>, <code>Touch7</code>, <code>I2S</code></td>
+<td align="center"><code>GPIO27</code>, <span class="ADC2">ADC2_CH7</span>, <span class="TOUCH">TOUCH7</span>, <span class="I2S">I2S</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">32 / D32</td>
-<td align="center"><code>GPIO32</code>, <code>ADC1_CH4</code>, <code>Touch9</code></td>
+<td align="center"><code>GPIO32</code>, <span class="ADC1">ADC1_CH4</span>, <span class="TOUCH">TOUCH9</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">33 / D33</td>
-<td align="center"><code>GPIO33</code>, <code>ADC1_CH5</code>, <code>Touch8</code></td>
+<td align="center"><code>GPIO33</code>, <span class="ADC1">ADC1_CH5</span>, <span class="TOUCH">TOUCH8</span></td>
 <td align="center"></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">34 / D34</td>
-<td align="center"><code>GPI34</code>, <code>ADC1_CH6</code></td>
+<td align="center"><code>GPI34</code>, <span class="ADC1">ADC1_CH6</span></td>
 <td align="center">само  цифров вход  (не може да  бъде изход);  няма  вътрешни  резистори</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">35 / D35</td>
-<td align="center"><code>GPI35</code>, <code>ADC1_CH7</code></td>
+<td align="center"><code>GPI35</code>, <span class="ADC1">ADC1_CH7</span></td>
 <td align="center">само  цифров вход  (не може да  бъде изход);  няма вътрешни  резистори</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">36 / VP</td>
-<td align="center"><code>GPI36</code>, <code>ADC1_CH0</code></td>
+<td align="center"><code>GPI36</code>, <span class="ADC1">ADC1_CH0</span></td>
 <td align="center">само  цифров вход  (не може да  бъде изход);  няма  вътрешни  резистори</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span></td>
 </tr>
 <tr>
 <td align="center">39 / VN</td>
-<td align="center"><code>GPI39</code>, <code>ADC1_CH3</code></td>
+<td align="center"><code>GPI39</code>, <span class="ADC1">ADC1_CH3</span></td>
 <td align="center">само  цифров вход  (не може да  бъде изход);  няма  вътрешни  резистори</td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td align="center"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span></td>
@@ -823,6 +812,7 @@
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></span> не използвай</p>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z"/></svg></span> използвай с внимание ,виж забележки</p>
 </details>
+<p>​    </p>
 <h3 id="gpios_2">Забележки към GPIOs</h3>
 <details class="tip">
 <summary>Пинове <code>GPIO 0, 2, 4, 5, 12, 15</code></summary>
