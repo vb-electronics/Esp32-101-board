@@ -1,0 +1,71 @@
+<style>
+.label {
+  color: white;
+  padding: 0px;
+  border-radius: 2px;
+}
+.TOUCH {background-color: #26C6DA;/* Cyan */
+	font-size: 11px;
+	color: black;
+  	padding: 1px;
+  	border-radius: 2px;} 
+.ADC2 {background-color: #D4E157;/* LIME */
+	font-size: 11px;
+	color: black;
+  	padding: 1px;
+  	border-radius: 2px;} 
+.ADC1 {background-color: #66BB6A; /* LIGHT GREEN  200*/
+	font-size: 11px;
+	color: white;
+  	padding: 1px;
+  	border-radius: 2px;}
+.UART0 {background-color: #FFEE58;/* Yellow */
+	font-size: 11px;
+	color: black;
+  	padding: 1px;
+  	border-radius: 2px;}
+.UART2 {background-color: #FFCA28;/* Amber */
+	font-size: 11px;
+	color: black;
+  	padding: 1px;
+  	border-radius: 2px;}
+
+.DAC { background-color: #E0E0E0;/* Gray */
+	font-size: 11px;
+	color: black;
+  	padding: 1px;
+  	border-radius: 2px;}
+.HSPI { background-color: #EC407A; /* Pink */
+  	font-size: 11px;
+	color: black;
+  	padding: 1px;
+  	border-radius: 2px;}
+.VSPI { background-color: #AB47BC; /* Purple */
+  	font-size: 11px;
+	color: white;
+  	padding: 1px;
+  	border-radius: 2px;}
+.I2C {	background-color: #5C6BC0; /* Indigo 400 */
+  	font-size: 11px;
+	color: white;
+  	padding: 1px;
+  	border-radius: 2px;}
+.I2S {	background-color: #9FA8DA; /* Indigo 200 */
+  	font-size: 11px;
+	color: black;
+  	padding: 1px;
+  	border-radius: 2px;}
+
+[data-md-color-scheme="electro"] {
+  --md-primary-fg-color:        #26A69A;
+  --md-accent-fg-color:	#388E3C;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #F57F17;
+  --md-accent-fg-color:	#FDD835;
+}
+
+		
+</style>
+
+

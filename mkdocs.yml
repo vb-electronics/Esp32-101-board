@@ -4,20 +4,42 @@ site_description: ESP32-101-board reference site
 nav:
   - Home: index.md
   - Инфо: boardInfo.md
+  - Референция I/O: gpio.md
+  - Инсталиране IDE: ide-install.md
   
 theme:
   name: material
+  icon:
+    logo: material/rocket-launch-outline
+  favicon: img/rocket-launch-outline.png
   palette: 
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: electro
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
-    - scheme: slate 
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate 
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-        
+  features:
+    - content.code.annotate
+
+extra_css:
+  - stylesheets/extra.css        
+
+
+
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
