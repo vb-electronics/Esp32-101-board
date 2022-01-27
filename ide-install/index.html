@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arduino-ide" class="md-skip">
+        <a href="#arduino-ide-esp32-add-on" class="md-skip">
           Skip to content
         </a>
       
@@ -261,9 +261,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Инсталиране IDE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Инсталиране IDE
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-ide" class="md-nav__link">
+    Инсталиране на Arduino IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esp32-add-on-arduino-ide" class="md-nav__link">
+    Инсталиране на ESP32 Add-on към Arduino IDE
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -289,6 +327,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-ide" class="md-nav__link">
+    Инсталиране на Arduino IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esp32-add-on-arduino-ide" class="md-nav__link">
+    Инсталиране на ESP32 Add-on към Arduino IDE
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -300,8 +360,54 @@
               
                 
 
-<h1 id="arduino-ide">Инсталиране на  Arduino IDE</h1>
-<h1 id="esp32-add-on-arduino-ide">Инсталиране на ESP32 Add-on към Arduino IDE</h1>
+<h1 id="arduino-ide-esp32-add-on">Arduino IDE + ESP32 Add-on</h1>
+<h2 id="arduino-ide">Инсталиране на Arduino IDE</h2>
+<blockquote>
+<p>Изтегете най-новата версия на <a href="https://www.arduino.cc/en/software" title="линк към официалния сайт">Arduino IDE</a>.  Има възможности за различни операционни системи, тук проследяваме инсталацията за  Windows. Може да изтеглите инсталатор, архив или директно приложение за Windows, съветът ни е изолзвайте инсталатора:
+<img alt="web-download-ide" src="../img/ide-installation/web-download-ide.png" title="ide download" /></p>
+<p>Следвайте инструкциите на инсталатора, ако не сте инсталира Arduino IDE до сега на вашият компютър, може да поиска да се запишат и някои  драйвеи за ардуино микроконтролери, запишете ги не са излишни.</p>
+</blockquote>
+<details class="info">
+<summary>Скрийншоти</summary>
+<p><img alt="install-ide-1" src="../img/ide-installation/install-ide-1.png" title="съгласяване с лиценз" /></p>
+<p><img alt="install-ide-2" src="../img/ide-installation/install-ide-2.png" title="избиране на всички компоненти" /></p>
+<p><img alt="install-ide-3" src="../img/ide-installation/install-ide-3.png" title="инсталационна папка" /></p>
+<p><img alt="install-ide-4" src="../img/ide-installation/install-ide-4.png" title="инсталация" /></p>
+<p><img alt="drivers" src="../img/ide-installation/Arduino_Install/drivers.PNG" title="допълнителни драйвери" /></p>
+<p><img alt="install-ide-5" src="../img/ide-installation/install-ide-5.png" /></p>
+</details>
+<h2 id="esp32-add-on-arduino-ide">Инсталиране на ESP32 Add-on към Arduino IDE</h2>
+<blockquote>
+<p>След като успешно сте инсталрали най-актуалната версия на Arduino IDE е време да запишете и добавката за контролера ESP32. </p>
+<ul>
+<li>избираме:</li>
+</ul>
+</blockquote>
+<details class="info" open="open">
+<summary>File&gt;Preferences</summary>
+<p><img alt="Capture" src="../img/ide-installation/Arduino_Install/Capture.PNG" /></p>
+</details>
+<blockquote>
+<ul>
+<li>в полето <strong>Additional Boards Manager URLs</strong> въвеждаме следния линк (текст) и потвърждаваме с бутона <code>[ ОК ]</code> </li>
+</ul>
+</blockquote>
+<div class="highlight"><pre><span></span><code>https://dl.espressif.com/dl/package<span class="nb">_</span>esp32<span class="nb">_</span>index.json
+</code></pre></div>
+<details class="info" open="open">
+<summary>Preferences</summary>
+<p><img alt="preferences_addon" src="../img/ide-installation/Arduino_Install/preferences_addon.PNG" /></p>
+</details>
+<blockquote>
+<ul>
+<li>избираме <code>Tools&gt; Board: "Arduino Uno"&gt; Boards Manager...</code>, което ни отваря мениджъра на възможните контролери, в полето за търсене въвеждаме <code>esp32</code> и инсталираме </li>
+</ul>
+</blockquote>
+<details class="info">
+<summary>Boards Manager</summary>
+<p><img alt="board_manager0" src="../img/ide-installation/Arduino_Install/board_manager0.PNG" /></p>
+<p><img alt="boards_manager_install" src="../img/ide-installation/Arduino_Install/boards_manager_install.PNG" /></p>
+</details>
 
               
             </article>
