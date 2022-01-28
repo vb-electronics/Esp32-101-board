@@ -208,7 +208,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        Начало
       </a>
     </li>
   
@@ -224,21 +224,6 @@
     <li class="md-nav__item">
       <a href="../boardInfo/" class="md-nav__link">
         Инфо
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gpio/" class="md-nav__link">
-        Референция I/O
       </a>
     </li>
   
@@ -299,10 +284,95 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Забележки
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/" class="md-nav__link">
+        Библиотеки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Примери
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Примери" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Примери
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/buttons-abc/" class="md-nav__link">
+        Бутон
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gpio/" class="md-nav__link">
+        Референция I/O
+      </a>
     </li>
   
 
@@ -347,6 +417,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Забележки
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -363,51 +440,67 @@
 <h1 id="arduino-ide-esp32-add-on">Arduino IDE + ESP32 Add-on</h1>
 <h2 id="arduino-ide">Инсталиране на Arduino IDE</h2>
 <blockquote>
-<p>Изтегете най-новата версия на <a href="https://www.arduino.cc/en/software" title="линк към официалния сайт">Arduino IDE</a>.  Има възможности за различни операционни системи, тук проследяваме инсталацията за  Windows. Може да изтеглите инсталатор, архив или директно приложение за Windows, съветът ни е изолзвайте инсталатора:
+<p>Има възможности за различни операционни системи, тук проследяваме инсталацията за  Windows и <em>Arduino IDE 1.8</em>. Може да изтеглите инсталатор, архив или директно приложение за Windows, съветът ни е изолзвайте инсталатора. Изтеглете най-новата версия на <a href="https://www.arduino.cc/en/software" title="линк към официалния сайт">Arduino IDE</a> :
 <img alt="web-download-ide" src="../img/ide-installation/web-download-ide.png" title="ide download" /></p>
-<p>Следвайте инструкциите на инсталатора, ако не сте инсталира Arduino IDE до сега на вашият компютър, може да поиска да се запишат и някои  драйвеи за ардуино микроконтролери, запишете ги не са излишни.</p>
+<p>Следвайте инструкциите на инсталатора, ако не сте инсталира Arduino IDE на вашият компютър, инсталаторът може да поиска записване и някои  драйвери за ардуино микроконтролери, запишете ги не са излишни.</p>
 </blockquote>
 <details class="info">
 <summary>Скрийншоти</summary>
-<p><img alt="install-ide-1" src="../img/ide-installation/install-ide-1.png" title="съгласяване с лиценз" /></p>
-<p><img alt="install-ide-2" src="../img/ide-installation/install-ide-2.png" title="избиране на всички компоненти" /></p>
-<p><img alt="install-ide-3" src="../img/ide-installation/install-ide-3.png" title="инсталационна папка" /></p>
-<p><img alt="install-ide-4" src="../img/ide-installation/install-ide-4.png" title="инсталация" /></p>
-<p><img alt="drivers" src="../img/ide-installation/Arduino_Install/drivers.PNG" title="допълнителни драйвери" /></p>
-<p><img alt="install-ide-5" src="../img/ide-installation/install-ide-5.png" /></p>
+<p><img alt="install-ide-1" loading="lazy" src="../img/ide-installation/install-ide-1.png" title="съгласяване с лиценз" /></p>
+<p><img alt="install-ide-2" loading="lazy" src="../img/ide-installation/install-ide-2.png" title="избиране на всички компоненти" /></p>
+<p><img alt="install-ide-3" loading="lazy" src="../img/ide-installation/install-ide-3.png" title="инсталационна папка" /></p>
+<p><img alt="install-ide-4" loading="lazy" src="../img/ide-installation/install-ide-4.png" title="инсталация" /></p>
+<p><img alt="drivers" loading="lazy" src="../img/ide-installation/Arduino_Install/drivers.PNG" title="допълнителни драйвери" /></p>
+<p><img alt="install-ide-5" loading="lazy" src="../img/ide-installation/install-ide-5.png" /></p>
 </details>
 <h2 id="esp32-add-on-arduino-ide">Инсталиране на ESP32 Add-on към Arduino IDE</h2>
 <blockquote>
 <p>След като успешно сте инсталрали най-актуалната версия на Arduino IDE е време да запишете и добавката за контролера ESP32. </p>
 <ul>
-<li>избираме:</li>
-</ul>
-</blockquote>
-<details class="info" open="open">
-<summary>File&gt;Preferences</summary>
-<p><img alt="Capture" src="../img/ide-installation/Arduino_Install/Capture.PNG" /></p>
-</details>
-<blockquote>
-<ul>
-<li>в полето <strong>Additional Boards Manager URLs</strong> въвеждаме следния линк (текст) и потвърждаваме с бутона <code>[ ОК ]</code> </li>
+<li>избираме <code>File&gt;Preferences</code> и в полето <strong>Additional Boards Manager URLs</strong> въвеждаме следния линк и потвърждаваме с бутона <code>[ ОК ]</code> </li>
 </ul>
 </blockquote>
 <div class="highlight"><pre><span></span><code>https://dl.espressif.com/dl/package<span class="nb">_</span>esp32<span class="nb">_</span>index.json
 </code></pre></div>
 <details class="info" open="open">
 <summary>Preferences</summary>
-<p><img alt="preferences_addon" src="../img/ide-installation/Arduino_Install/preferences_addon.PNG" /></p>
+<p><img alt="preferences_addon" loading="lazy" src="../img/ide-installation/Arduino_Install/preferences_addon.PNG" /></p>
 </details>
 <blockquote>
 <ul>
 <li>избираме <code>Tools&gt; Board: "Arduino Uno"&gt; Boards Manager...</code>, което ни отваря мениджъра на възможните контролери, в полето за търсене въвеждаме <code>esp32</code> и инсталираме </li>
 </ul>
 </blockquote>
-<details class="info">
+<details class="info" open="open">
 <summary>Boards Manager</summary>
-<p><img alt="board_manager0" src="../img/ide-installation/Arduino_Install/board_manager0.PNG" /></p>
-<p><img alt="boards_manager_install" src="../img/ide-installation/Arduino_Install/boards_manager_install.PNG" /></p>
+<p><img alt="board_manager0" loading="lazy" src="../img/ide-installation/Arduino_Install/board_manager0.PNG" /></p>
+<p><img alt="boards_manager_install" loading="lazy" src="../img/ide-installation/Arduino_Install/boards_manager_install.PNG" /></p>
 </details>
+<h2 id="_1">Забележки</h2>
+<div class="admonition warning">
+<p class="admonition-title">Kонфигурация на Arduino IDE</p>
+<p>За правилна работа с контролера, който е към развойната платка, е нужно <strong>първо</strong> да се избере правилния модул (Board: "ESP32 Dev Module") и <strong>след това</strong> да се приложат следните настройки от менюто <code>Tools</code> :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Конфигурация</label><label for="__tabbed_1_2">Снимка</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>Board: &quot;ESP32 Dev Module&quot;
+Upload Speed: &quot;921600&quot;
+CPU Frequency: &quot;240MHz (Wifi/BT)&quot;
+Flash Frequency: &quot;80 MHz&quot;
+Flash Mode: &quot;QIO&quot;
+Flash Size: &quot;4MB (32Mb)&quot;
+Partition Scheme: &quot;Default 4MB with spiffs (1.2MB App/1.5MB SPIFFS)&quot;
+Code Debug Level: &quot;None&quot;
+PSRAM: &quot;Disabled&quot;
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="settings" loading="lazy" src="../img/ide-installation/Arduino_Install/settings-2.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<p>След като сте готови с инсталацията, може да преминете към <a href="../libraries/">добавяне на библиотеки</a></p>
 
               
             </article>
@@ -421,7 +514,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../gpio/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Референция I/O" rel="prev">
+        <a href="../boardInfo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Инфо" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -430,11 +523,26 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Референция I/O
+              Инфо
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../libraries/" class="md-footer__link md-footer__link--next" aria-label="Next: Библиотеки" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Библиотеки
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
