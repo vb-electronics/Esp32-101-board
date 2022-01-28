@@ -2,10 +2,13 @@ site_name: Esp32-101-board
 site_description: ESP32-101-board reference site
 
 nav:
-  - Home: index.md
+  - Начало: index.md
   - Инфо: boardInfo.md
-  - Референция I/O: gpio.md
   - Инсталиране IDE: ide-install.md
+  - Библиотеки: libraries.md
+  - Примери: 
+    - Бутон: examples/buttons-abc.md
+  - Референция I/O: gpio.md
   
 theme:
   name: material
