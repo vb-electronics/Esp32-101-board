@@ -34,20 +34,20 @@
 
 
 ``` tex
-https://dl.espressif.com/dl/package_esp32_index.json
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
 ```
 
 ???+ info "Preferences"
 	![preferences_addon](img/ide-installation/Arduino_Install/preferences_addon.PNG){ loading=lazy }
 
->- избираме `Tools> Board: "Arduino Uno"> Boards Manager...`, което ни отваря мениджъра на възможните контролери, в полето за търсене въвеждаме `esp32` и инсталираме 
+>- избираме `Tools> Board: "Arduino Uno"> Boards Manager...`, което ни отваря мениджъра на възможните контролери, в полето за търсене въвеждаме `esp32` и инсталираме най-новата версия
 
 ???+ info "Boards Manager"
 
 	![board_manager0](img/ide-installation/Arduino_Install/board_manager0.PNG){ loading=lazy }
 	
 	![boards_manager_install](img/ide-installation/Arduino_Install/boards_manager_install.PNG){ loading=lazy }
-	
+
 ## Забележки
 !!! warning "Kонфигурация на Arduino IDE"
 	За правилна работа с контролера, който е към развойната платка, е нужно **първо** да се избере правилния модул (Board: "ESP32 Dev Module") и **след това** да се приложат следните настройки от менюто `Tools` :

@@ -5,9 +5,27 @@ nav:
   - Начало: index.md
   - Инфо: boardInfo.md
   - Инсталиране IDE: ide-install.md
-  - Библиотеки: libraries.md
+  - Библиотеки: 
+    - Инсталиране на библиотека: libraries.md
+    - Използвани в 101-board: libraries.md
+    
   - Примери: 
-    - Бутон: examples/buttons-abc.md
+    - 01. Бутони: examples/01-button.md
+    - 02. Ротационен енкодер: examples/02-encoder.md
+    - 03. RGB светодиод: examples/03-rgb.md
+    - 04. Транзисторни цифрови изходи: examples/04-transistors.md
+    - 05. Пиезо-зумер: examples/05-piezo.md
+    - 06. Сензори за допир: examples/06-touch.md
+    - 07. Аналогов джойстик: examples/07-joystick.md
+    - 08. Температурен сензор: examples/08-temperature.md
+    - 09. Фотодиод: examples/09-photodiode.md
+    - 10. Инфрачервен светодиод: examples/10-infrared-tx.md
+    - 11. Инфрачервен приемник с демодулатор (38kHz): examples/11-infrared-rx.md
+    - 12. Графичен OLED дисплей : examples/12-display.md
+    - 13. Жироскоп/акселерометър: examples/13-mems.md
+    - 14. Допълнителна (външна) EEPROM памет: examples/14-onboard-eeprom.md
+    - 99. Демо: examples/99-demo.md
+    
   - Референция I/O: gpio.md
   
 theme:
@@ -35,6 +53,8 @@ extra_css:
 
 
 markdown_extensions:
+  - toc:
+      title: "На тази страница"
   - attr_list
   - md_in_html
   - admonition
