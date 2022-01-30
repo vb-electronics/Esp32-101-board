@@ -7,7 +7,7 @@ nav:
   - Инсталиране IDE: ide-install.md
   - Библиотеки: 
     - Инсталиране на библиотека: libraries.md
-    - Използвани в 101-board: libraries.md
+    - Използвани в 101-board: libraries-onboard.md
     
   - Примери: 
     - 01. Бутони: examples/01-button.md
@@ -49,8 +49,17 @@ theme:
 
 extra_css:
   - stylesheets/extra.css        
+  - https://unpkg.com/mermaid@8.4.5/dist/mermaid.min.js
 
-
+plugins:
+  - markdownmermaid:
+     init_options:
+            - startOnLoad: true
+            - theme: "forest"
+            - themeCSS: ".node rect { fill: red; }"
+            - flowchart:
+                - curve: "cardinal"
+                - useMaxWidth: true
 
 markdown_extensions:
   - toc:
@@ -59,7 +68,11 @@ markdown_extensions:
   - md_in_html
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+     custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
   - tables
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji

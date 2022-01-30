@@ -1,14 +1,39 @@
-Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-{ .annotate }
-
-1 .:man_raising_hand: I'm an annotation! I can contain `code`, __formatted
-text__, images, ... basically anything that can be expressed in Markdown.
 
 
-<div class="annotate" markdown>
+## Местоположение на библиотеките
 
-> Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 
-</div>
+### Вградени ESP32 библиотеки
+До библиотеките, които идват с инсталирането на addon-a за ESP32, както и други контролери, се достига по този път: `C:\Users\UserName\AppData\Local\Arduino\packages\esp32\hardware\esp32\2.0.2\libraries`.
+Краткият път може да варира, но структурата е подобна на показаната по-долу. Имайте предвид, че папката `AppData` не се вижда във файловия мениджър, затова въведете директно в адресната лента `C:\Users\YourUserName\AppData`.
+```
+C:\Users
+|---\UserName 		
+|---|---\AppData
+|---|---|---\Local
+|---|---|---|---\Arduino Folder
+|---|---|---|---|---\packages
+|---|---|---|---|---|---\esp32
+|---|---|---|---|---|---|---\hardware
+|---|---|---|---|---|---|---|---\esp32
+|---|---|---|---|---|---|---|---|---\2.0.2 (addon version)
+|---|---|---|---|---|---|---|---|---|---\libraries
+```
 
-1.  :man_raising_hand: I'm an annotation!
+
+
+
+### Вградени Arduino библиотеки
+
+### Библиотеки на потребителя
+
+Библиотеките, които се записват от потребителя са разположени на друго място от вградените библиотеки
+
+## Инсталиране 
+
+### инсталация през Library Manager
+
+### инсталация от zip
+
+## изтриване
+ 	
