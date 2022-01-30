@@ -10,19 +10,19 @@
       
       
       
-      <link rel="icon" href="/img/rocket-launch-outline.png">
+      <link rel="icon" href="../../img/rocket-launch-outline.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
-        <title>Esp32-101-board</title>
+        <title>03. RGB светодиод - Esp32-101-board</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -36,9 +36,9 @@
       
     
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Esp32-101-board" class="md-header__button md-logo" aria-label="Esp32-101-board" data-md-component="logo">
+    <a href="../.." title="Esp32-101-board" class="md-header__button md-logo" aria-label="Esp32-101-board" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27l-2.77 6.1M5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M19.22 4c.28 0 .53 0 .74.05.17 1.39-.02 4.25-3.3 7.53-1.7 1.71-3.73 3.02-6.01 3.89l-2.15-2.1c.92-2.31 2.23-4.34 3.92-6.03C15.18 4.58 17.64 4 19.22 4m0-2c-1.98 0-4.98.69-8.22 3.93-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.38.38.89.61 1.42.61.23 0 .47-.06.7-.15A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61S20.7 2 19.22 2m-4.68 7.46c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83-.78.78-2.05.78-2.83 0m-5.66 7.07-1.41-1.41 1.41 1.41M6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22h1.41M2 22h1.41l4.77-4.76-1.42-1.41L2 20.59V22m0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76v1.41z"/></svg>
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              03. RGB светодиод
             
           </span>
         </div>
@@ -183,7 +183,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Esp32-101-board" class="md-nav__button md-logo" aria-label="Esp32-101-board" data-md-component="logo">
+    <a href="../.." title="Esp32-101-board" class="md-nav__button md-logo" aria-label="Esp32-101-board" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27l-2.77 6.1M5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M19.22 4c.28 0 .53 0 .74.05.17 1.39-.02 4.25-3.3 7.53-1.7 1.71-3.73 3.02-6.01 3.89l-2.15-2.1c.92-2.31 2.23-4.34 3.92-6.03C15.18 4.58 17.64 4 19.22 4m0-2c-1.98 0-4.98.69-8.22 3.93-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.38.38.89.61 1.42.61.23 0 .47-.06.7-.15A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61S20.7 2 19.22 2m-4.68 7.46c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83-.78.78-2.05.78-2.83 0m-5.66 7.07-1.41-1.41 1.41 1.41M6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22h1.41M2 22h1.41l4.77-4.76-1.42-1.41L2 20.59V22m0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76v1.41z"/></svg>
@@ -202,7 +202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Начало
       </a>
     </li>
@@ -217,7 +217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/boardInfo/" class="md-nav__link">
+      <a href="../../boardInfo/" class="md-nav__link">
         Инфо
       </a>
     </li>
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ide-install/" class="md-nav__link">
+      <a href="../../ide-install/" class="md-nav__link">
         Инсталиране IDE
       </a>
     </li>
@@ -273,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/libraries/" class="md-nav__link">
+      <a href="../../libraries/" class="md-nav__link">
         Инсталиране на библиотека
       </a>
     </li>
@@ -287,7 +287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/libraries/" class="md-nav__link">
+      <a href="../../libraries/" class="md-nav__link">
         Използвани в 101-board
       </a>
     </li>
@@ -307,12 +307,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -335,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/01-button/" class="md-nav__link">
+      <a href="../01-button/" class="md-nav__link">
         01. Бутони
       </a>
     </li>
@@ -349,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/02-encoder/" class="md-nav__link">
+      <a href="../02-encoder/" class="md-nav__link">
         02. Ротационен енкодер
       </a>
     </li>
@@ -361,11 +363,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/examples/03-rgb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         03. RGB светодиод
       </a>
+      
     </li>
   
 
@@ -377,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/04-transistors/" class="md-nav__link">
+      <a href="../04-transistors/" class="md-nav__link">
         04. Транзисторни цифрови изходи
       </a>
     </li>
@@ -391,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/05-piezo/" class="md-nav__link">
+      <a href="../05-piezo/" class="md-nav__link">
         05. Пиезо-зумер
       </a>
     </li>
@@ -405,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/06-touch/" class="md-nav__link">
+      <a href="../06-touch/" class="md-nav__link">
         06. Сензори за допир
       </a>
     </li>
@@ -419,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/07-joystick/" class="md-nav__link">
+      <a href="../07-joystick/" class="md-nav__link">
         07. Аналогов джойстик
       </a>
     </li>
@@ -433,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/08-temperature/" class="md-nav__link">
+      <a href="../08-temperature/" class="md-nav__link">
         08. Температурен сензор
       </a>
     </li>
@@ -447,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/09-photodiode/" class="md-nav__link">
+      <a href="../09-photodiode/" class="md-nav__link">
         09. Фотодиод
       </a>
     </li>
@@ -461,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/10-infrared-tx/" class="md-nav__link">
+      <a href="../10-infrared-tx/" class="md-nav__link">
         10. Инфрачервен светодиод
       </a>
     </li>
@@ -475,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/11-infrared-rx/" class="md-nav__link">
+      <a href="../11-infrared-rx/" class="md-nav__link">
         11. Инфрачервен приемник с демодулатор (38kHz)
       </a>
     </li>
@@ -489,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/12-display/" class="md-nav__link">
+      <a href="../12-display/" class="md-nav__link">
         12. Графичен OLED дисплей
       </a>
     </li>
@@ -503,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/13-mems/" class="md-nav__link">
+      <a href="../13-mems/" class="md-nav__link">
         13. Жироскоп/акселерометър
       </a>
     </li>
@@ -517,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/14-onboard-eeprom/" class="md-nav__link">
+      <a href="../14-onboard-eeprom/" class="md-nav__link">
         14. Допълнителна (външна) EEPROM памет
       </a>
     </li>
@@ -531,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/examples/99-demo/" class="md-nav__link">
+      <a href="../99-demo/" class="md-nav__link">
         99. Демо
       </a>
     </li>
@@ -553,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/gpio/" class="md-nav__link">
+      <a href="../../gpio/" class="md-nav__link">
         Референция I/O
       </a>
     </li>
@@ -571,8 +581,13 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
 
+  <h1>03. RGB светодиод</h1>
+
+<p>пример за бутон</p>
+
+              
             </article>
           </div>
         </div>
@@ -580,6 +595,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../02-encoder/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 02. Ротационен енкодер" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              02. Ротационен енкодер
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../04-transistors/" class="md-footer__link md-footer__link--next" aria-label="Next: 04. Транзисторни цифрови изходи" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              04. Транзисторни цифрови изходи
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -601,10 +651,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "/", "features": ["content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "/assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="/assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>
