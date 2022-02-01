@@ -8,7 +8,7 @@
 <meta content="ESP32-101-board reference site" name="description"/>
 <link href="../img/rocket-launch-outline.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>Използвани в 101-board - Esp32-101-board</title>
+<title>ESP32_ADC - Esp32-101-board</title>
 <link href="../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,6 +24,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#use-of-adcs-in-esp32-arduino-core">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -45,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Използвани в 101-board
+              ESP32_ADC
             
           </span>
 </div>
@@ -92,8 +95,8 @@
         Инсталиране IDE
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
           Библиотеки
           <span class="md-nav__icon md-icon"></span>
@@ -109,9 +112,8 @@
         Инсталиране на библиотека
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../libraries-onboard/">
         Използвани в 101-board
       </a>
 </li>
@@ -213,8 +215,8 @@
         Референция I/O
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7">
           Notes
           <span class="md-nav__icon md-icon"></span>
@@ -225,13 +227,70 @@
           Notes
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../ESP32-ADC/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          ESP32_ADC
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         ESP32_ADC
       </a>
+<nav aria-label="На тази страница" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      На тази страница
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ttenuation-of-measured-input-voltage">
+    Аttenuation of Measured input voltage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#default-values-for-adc-config">
+    default values for ADC config
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#code-functions">
+    Code functions
+  </a>
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="На тази страница" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      На тази страница
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ttenuation-of-measured-input-voltage">
+    Аttenuation of Measured input voltage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#default-values-for-adc-config">
+    default values for ADC config
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#code-functions">
+    Code functions
+  </a>
 </li>
 </ul>
 </nav>
@@ -240,25 +299,78 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Използвани в 101-board</h1>
-<p class="annotate">Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.</p>
-<p>1 .<img alt="🙋‍♂️" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"/> I'm an annotation! I can contain <code>code</code>, <strong>formatted
-text</strong>, images, ... basically anything that can be expressed in Markdown.</p>
-<div class="annotate">
+<h1 id="use-of-adcs-in-esp32-arduino-core">Use of ADCs in ESP32 Arduino core</h1>
+<p>Main information is from official <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/adc.html#adc-channels">docs</a></p>
+<h2 id="ttenuation-of-measured-input-voltage">Аttenuation of Measured input voltage</h2>
+<p>Vref is the reference voltage used internally by ESP32 ADCs for measuring the input voltage. The ESP32 ADCs can measure analog voltages from 0 V to Vref. Among different chips, the Vref varies, the median is 1.1 V. In order to convert voltages larger than Vref, input voltages can be attenuated before being input to the ADCs. </p>
+<p>The median of Vref is 1.1 V with 0 db attenuation(gain), most of the chips comes with factory calibrated ADC_cal values</p>
+<p>to check the  Vref of your Chip</p>
+<p>verify if eFuse Vref is present by running the espefuse.py tool with adc_info parameter
+in CMD:
+<div class="highlight"><pre><span></span><code>~/esptool_py/esptool/espefuse.py --port "PORTNAME" adc_info
+</code></pre></div>
+example return:
+<div class="highlight"><pre><span></span><code>ADC VRef calibration: 1093 mV
+</code></pre></div></p>
+<p>There are 4 available attenuation options, the higher the attenuation is, the higher the measurable input voltage could be.
+ You can change the attenuation (negative gain) of input voltage  with <code>analogSetAttenuation(val)</code> </p>
+<p>ADC_ATTEN_DB_0 = 1 x Vref</p>
+<p>ADC_ATTEN_DB_2_5 = 1.33 x Vref</p>
+<p>ADC_ATTEN_DB_6 = 1.99 x Vref</p>
+<p>ADC_ATTEN_DB_11 = 3.54 x Vref</p>
+<p><div class="highlight"><pre><span></span><code>+----------+-------------+-----------------+
+|          | attenuation | suggested range |
+|    SoC   |     (dB)    |      (mV)       |
++==========+=============+=================+
+|          |       0     |    100 ~  950   |
+|          +-------------+-----------------+
+|          |       2.5   |    100 ~ 1250   |
+|   ESP32  +-------------+-----------------+
+|          |       6     |    150 ~ 1750   |
+|          +-------------+-----------------+
+|          |      11     |    150 ~ 2450   |
++----------+-------------+-----------------+
+|          |       0     |      0 ~  750   |
+|          +-------------+-----------------+
+|          |       2.5   |      0 ~ 1050   |
+| ESP32-S2 +-------------+-----------------+
+|          |       6     |      0 ~ 1300   |
+|          +-------------+-----------------+
+|          |      11     |      0 ~ 2500   |
++----------+-------------+-----------------+
+</code></pre></div>
+There is an online converter <a href="http://www.sengpielaudio.com/calculator-gainloss.htm">Decibels to Voltage Gain/Loss</a></p>
+<h2 id="default-values-for-adc-config">default values for ADC config</h2>
+<pre><code>default ADC resolution = 12 bit
+default Attenuation - 11 db
+</code></pre>
+<h2 id="code-functions">Code functions</h2>
+<p>For full available code functions check the core library:</p>
+<p><code>C:\Users\KolevBM\AppData\Local\Arduino15\packages\esp32\hardware\esp32\1.0.4\cores\esp32\esp32-hal-adc.c</code></p>
+<p><code>C:\Users\KolevBM\AppData\Local\Arduino15\packages\esp32\hardware\esp32\1.0.4\cores\esp32\esp32-hal-adc.h</code></p>
+<p>Here are listed some of the basics functions:</p>
+<p><code>analogReadResolution(resolution)</code>: set the sample bits and resolution. It can be a value between 9 (0 – 511) and 12 bits (0 – 4095). Default is 12-bit resolution.</p>
+<p><code>analogSetWidth(width)</code>: set the sample bits and resolution. It can be a value between 9 (0 – 511) and 12 bits (0 – 4095). Default is 12-bit resolution.</p>
+<p><code>analogSetCycles(cycles)</code>: set the number of cycles per sample. Default is 8. Range: 1 to 255.</p>
+<p><code>analogSetSamples(samples)</code>: set the number of samples in the range. Default is 1 sample. It has an effect of increasing sensitivity.</p>
+<p><code>analogSetClockDiv(attenuation)</code>: set the divider for the ADC clock. Default is 1. Range: 1 to 255.</p>
+<p><code>analogSetAttenuation(attenuation)</code>: sets the input attenuation for all ADC pins. Default is ADC_11db. Accepted values:</p>
 <blockquote>
-<p>Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.</p>
+<p>ADC_0db: sets no attenuation. ADC can measure up to approximately 800 mV (1V input = ADC reading of 1088).</p>
+<p>ADC_2_5db: The input voltage of ADC will be attenuated, extending the range of measurement to up to approx. 1100 mV. (1V input = ADC reading of 3722).</p>
+<p>ADC_6db: The input voltage of ADC will be attenuated, extending the range of measurement to up to approx. 1350 mV. (1V input = ADC reading of 3033).</p>
+<p>ADC_11db: The input voltage of ADC will be attenuated, extending the range of measurement to up to approx. 2600 mV. (1V input = ADC reading of 1575).</p>
+<p><code>analogSetPinAttenuation(pin, attenuation)</code>: sets the input attenuation for the specified pin. The default is ADC_11db. Attenuation values are the same from previous function.</p>
 </blockquote>
-</div>
-<ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"/> I'm an annotation!</li>
-</ol>
+<p><code>adcAttachPin(pin)</code>: Attach a pin to ADC (also clears any other analog mode that could be on). Returns TRUE or FALSE result.</p>
+<p><code>adcStart(pin)</code>, <code>adcBusy(pin)</code> and <code>resultadcEnd(pin)</code>: starts an ADC convertion on attached pin’s bus. Check if conversion on the pin’s ADC bus is currently running (returns TRUE or FALSE). Get the result of the conversion: returns 16-bit integer.</p>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Инсталиране на библиотека" class="md-footer__link md-footer__link--prev" href="../libraries/" rel="prev">
+<a aria-label="Previous: Референция I/O" class="md-footer__link md-footer__link--prev" href="../gpio/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -267,21 +379,8 @@ text</strong>, images, ... basically anything that can be expressed in Markdown.
 <span class="md-footer__direction">
                 Previous
               </span>
-              Инсталиране на библиотека
+              Референция I/O
             </div>
-</div>
-</a>
-<a aria-label="Next: 01. Бутони" class="md-footer__link md-footer__link--next" href="../examples/01-button/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              01. Бутони
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
 </div>
 </a>
 </nav>
