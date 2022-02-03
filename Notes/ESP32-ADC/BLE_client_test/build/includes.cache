@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\KolevBM\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\1.0.4\\cores\\esp32"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\KolevBM\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\1.0.4\\variants\\esp32"
+  },
+  {
+    "Sourcefile": "C:\\Users\\KolevBM\\Documents\\Arduino\\BLE_client_test\\build\\sketch\\BLE_client_test.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
