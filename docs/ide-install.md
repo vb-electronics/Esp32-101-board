@@ -31,7 +31,10 @@
 
 >- избираме `File>Preferences` и в полето **Additional Boards Manager URLs** въвеждаме следния линк и потвърждаваме с бутона `[ ОК ]` 
 
-
+!!! caution
+	Arduino ESP32 core v2.x.x cannot be used on Windows 8.x x86 (32 bits), Windows 7 or earlier. The Windows 32 bits OS is no longer supported by this toolchain.
+	
+	The Arduino ESP32 v1.0.6 still works on WIN32. You might want to install python 3.8.x because it is the latest release supported by Windows 7.
 
 ``` tex
 https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
@@ -67,3 +70,6 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
         ![settings](img/ide-installation/Arduino_Install/settings-2.png){ loading=lazy }
     
 След като сте готови с инсталацията, може да преминете към [добавяне на библиотеки](libraries.md)
+
+## Ресурси
+ - [docs.espressif.com/projects/arduino-esp32](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#before-installing)

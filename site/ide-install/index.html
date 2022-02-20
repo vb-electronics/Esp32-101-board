@@ -120,6 +120,11 @@
     Забележки
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    Ресурси
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -243,6 +248,46 @@
         Референция I/O
       </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Notes" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/ESP32-ADC/ESP32-ADC/">
+        ESP32_ADC
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/ESP32-DAC/ESP32-DAC/">
+        ESP32-DAC
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/ESP32-HAL/ESP32-HAL/">
+        ESP32-HAL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/ESP32-LEDC/ESP32-LEDC/">
+        ESP32-LEDC
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/ESP32-TIMER/ESP32-TIMER/">
+        ESP32-TIMER
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -270,6 +315,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
     Забележки
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    Ресурси
   </a>
 </li>
 </ul>
@@ -302,6 +352,11 @@
 <li>избираме <code>File&gt;Preferences</code> и в полето <strong>Additional Boards Manager URLs</strong> въвеждаме следния линк и потвърждаваме с бутона <code>[ ОК ]</code> </li>
 </ul>
 </blockquote>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Arduino ESP32 core v2.x.x cannot be used on Windows 8.x x86 (32 bits), Windows 7 or earlier. The Windows 32 bits OS is no longer supported by this toolchain.</p>
+<p>The Arduino ESP32 v1.0.6 still works on WIN32. You might want to install python 3.8.x because it is the latest release supported by Windows 7.</p>
+</div>
 <div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package<span class="nb">_</span>esp32<span class="nb">_</span>dev<span class="nb">_</span>index.json
 </code></pre></div>
 <details class="info" open="open">
@@ -343,6 +398,10 @@ PSRAM: "Disabled"
 </input></input></div>
 </div>
 <p>След като сте готови с инсталацията, може да преминете към <a href="../libraries/">добавяне на библиотеки</a></p>
+<h2 id="_2">Ресурси</h2>
+<ul>
+<li><a href="https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html#before-installing">docs.espressif.com/projects/arduino-esp32</a></li>
+</ul>
 </article>
 </div>
 </div>

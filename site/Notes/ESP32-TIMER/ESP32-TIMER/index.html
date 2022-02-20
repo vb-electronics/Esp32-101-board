@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="ESP32-101-board reference site" name="description"/>
+<link href="../../../img/rocket-launch-outline.png" rel="icon"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
+<title>ESP32-TIMER - Esp32-101-board</title>
+<link href="../../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="https://unpkg.com/mermaid@8.4.5/dist/mermaid.min.js" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="electro" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#hardware-timers-in-esp32">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Esp32-101-board" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Esp32-101-board">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27l-2.77 6.1M5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M19.22 4c.28 0 .53 0 .74.05.17 1.39-.02 4.25-3.3 7.53-1.7 1.71-3.73 3.02-6.01 3.89l-2.15-2.1c.92-2.31 2.23-4.34 3.92-6.03C15.18 4.58 17.64 4 19.22 4m0-2c-1.98 0-4.98.69-8.22 3.93-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.38.38.89.61 1.42.61.23 0 .47-.06.7-.15A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61S20.7 2 19.22 2m-4.68 7.46c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83-.78.78-2.05.78-2.83 0m-5.66 7.07-1.41-1.41 1.41 1.41M6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22h1.41M2 22h1.41l4.77-4.76-1.42-1.41L2 20.59V22m0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76v1.41z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Esp32-101-board
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              ESP32-TIMER
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="" data-md-color-scheme="electro" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"></path></svg>
+</label>
+</form>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Esp32-101-board" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Esp32-101-board">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27l-2.77 6.1M5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M19.22 4c.28 0 .53 0 .74.05.17 1.39-.02 4.25-3.3 7.53-1.7 1.71-3.73 3.02-6.01 3.89l-2.15-2.1c.92-2.31 2.23-4.34 3.92-6.03C15.18 4.58 17.64 4 19.22 4m0-2c-1.98 0-4.98.69-8.22 3.93-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.38.38.89.61 1.42.61.23 0 .47-.06.7-.15A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61S20.7 2 19.22 2m-4.68 7.46c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83-.78.78-2.05.78-2.83 0m-5.66 7.07-1.41-1.41 1.41 1.41M6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22h1.41M2 22h1.41l4.77-4.76-1.42-1.41L2 20.59V22m0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76v1.41z"></path></svg>
+</a>
+    Esp32-101-board
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Начало
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../boardInfo/">
+        Инфо
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../ide-install/">
+        Инсталиране IDE
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          Библиотеки
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Библиотеки" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Библиотеки
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../libraries/">
+        Инсталиране на библиотека
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../libraries-onboard/">
+        Използвани в 101-board
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Примери
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Примери" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Примери
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/01-button/">
+        01. Бутони
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/02-encoder/">
+        02. Ротационен енкодер
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/03-rgb/">
+        03. RGB светодиод
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/04-transistors/">
+        04. Транзисторни цифрови изходи
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/05-piezo/">
+        05. Пиезо-зумер
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/06-touch/">
+        06. Сензори за допир
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/07-joystick/">
+        07. Аналогов джойстик
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/08-temperature/">
+        08. Температурен сензор
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/09-photodiode/">
+        09. Фотодиод
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/10-infrared-tx/">
+        10. Инфрачервен светодиод
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/11-infrared-rx/">
+        11. Инфрачервен приемник с демодулатор (38kHz)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/12-display/">
+        12. Графичен OLED дисплей
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/13-mems/">
+        13. Жироскоп/акселерометър
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/14-onboard-eeprom/">
+        14. Допълнителна (външна) EEPROM памет
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/99-demo/">
+        99. Демо
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../gpio/">
+        Референция I/O
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Notes" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ESP32-ADC/ESP32-ADC/">
+        ESP32_ADC
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ESP32-DAC/ESP32-DAC/">
+        ESP32-DAC
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ESP32-HAL/ESP32-HAL/">
+        ESP32-HAL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ESP32-LEDC/ESP32-LEDC/">
+        ESP32-LEDC
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          ESP32-TIMER
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        ESP32-TIMER
+      </a>
+<nav aria-label="На тази страница" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      На тази страница
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simple-watchdog-timer">
+    simple watchdog timer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#not-so-simple-repeat-timer">
+    not so simple repeat timer
+  </a>
+<nav aria-label="not so simple repeat timer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-initialization-usage">
+    basic initialization usage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#isr">
+    ISR
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="На тази страница" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      На тази страница
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simple-watchdog-timer">
+    simple watchdog timer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#not-so-simple-repeat-timer">
+    not so simple repeat timer
+  </a>
+<nav aria-label="not so simple repeat timer" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-initialization-usage">
+    basic initialization usage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#isr">
+    ISR
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="hardware-timers-in-esp32">Hardware Timers in esp32</h1>
+<p>The ESP32 chip contains two hardware timer groups. Each group has two general-purpose hardware timers. They are all 64-bit generic timers based on 16-bit pre-scalers and 64-bit up / down counters which are capable of being auto-reloaded.
+ - 2 groups x 2 hw timers = 4 timers (0-3)
+ - 16 bit prescaler
+ - typically the frequency of the base signal used by the ESP32 counters is <strong>80 MHz</strong> (this is true for the FireBeetle board)   <strong>80 000 000 times per second</strong>
+   - using a <strong>prescaler of 80</strong> will lead to <strong>1 000 000 times per second</strong><br/>
+     - each microsecond the counter will go up</p>
+<h2 id="simple-watchdog-timer">simple watchdog timer</h2>
+<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="s">"C"</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">"esp_system.h"</span><span class="cp"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">         </span><span class="c1">//gpio to use to trigger delay</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">wdtTimeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3000</span><span class="p">;</span><span class="w">  </span><span class="c1">//time in ms to trigger the watchdog</span>
+<span class="n">hw_timer_t</span><span class="w"> </span><span class="o">*</span><span class="n">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">ARDUINO_ISR_ATTR</span><span class="w"> </span><span class="nf">resetModule</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">ets_printf</span><span class="p">(</span><span class="s">"reboot</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">esp_restart</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"running setup"</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">button</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w">                    </span><span class="c1">//init control pin</span>
+<span class="w">  </span><span class="n">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timerBegin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w">                  </span><span class="c1">//timer 0, div 80</span>
+<span class="w">  </span><span class="n">timerAttachInterrupt</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">resetModule</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w">  </span><span class="c1">//attach callback</span>
+<span class="w">  </span><span class="n">timerAlarmWrite</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="n">wdtTimeout</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="c1">//set time in us</span>
+<span class="w">  </span><span class="n">timerAlarmEnable</span><span class="p">(</span><span class="n">timer</span><span class="p">);</span><span class="w">                          </span><span class="c1">//enable interrupt</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"running main loop"</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">timerWrite</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">//reset timer (feed watchdog)</span>
+<span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="n">loopTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//while button is pressed, delay up to 3 seconds to trigger the timer</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">button</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"button pressed"</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">//simulate work</span>
+<span class="w">  </span><span class="n">loopTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">loopTime</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"loop time is = "</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">loopTime</span><span class="p">);</span><span class="w"> </span><span class="c1">//should be under 3000</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="not-so-simple-repeat-timer">not so simple repeat timer</h2>
+<hr/>
+<p>we will need to declare a variable of type portMUX_TYPE, which we will use to take care of the synchronization between the main loop and the ISR, when modifying a shared variable.</p>
+<p><code>portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;</code></p>
+<p><code>volatile int interruptCounter;</code> the shared variable</p>
+<p><em>when changing the value of shared variable we use </em><em>spinlock macros</em>**</p>
+<div class="highlight"><pre><span></span><code><span class="n">portENTER_CRITICAL</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timerMux</span><span class="p">);</span><span class="w"></span>
+<span class="n">interruptCounter</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="n">portEXIT_CRITICAL</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timerMux</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="basic-initialization-usage">basic initialization usage</h3>
+<ol>
+<li>
+<p>initialize timer </p>
+<ul>
+<li>initialize our timer with a call to the <code>timerBegin</code> function, which will return a pointer to a structure of type hw_timer_t, which is the one of the timer global variable we declared in the previous section.
+ <code>c
+hw_timer_t * timerBegin(uint8_t num, uint16_t divider, bool countUp)</code></li>
+<li>As input, this function receives the number of the timer we want to use (from 0 to 3, since we have 4 hardware timers), the value of the prescaler and a flag indicating if the counter should count up (true) or down (false).</li>
+</ul>
+</li>
+<li>
+<p>attatch ISR</p>
+<ul>
+<li>bind it to a handling function
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">timerAttachInterrupt</span><span class="p">(</span><span class="n">hw_timer_t</span><span class="w"> </span><span class="o">*</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">fn</span><span class="p">)(</span><span class="kt">void</span><span class="p">),</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">edge</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></li>
+<li>This function receives as input <strong>a pointer</strong> to the initialized timer, which we stored in our global variable, the <strong>address of the function</strong> that will handle the interrupt and <strong>a flag</strong> indicating if the interrupt to be generated is edge (true) or level (false)</li>
+</ul>
+</li>
+<li>
+<p>specify the counter value in which the timer interrupt will be generated
+    <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">timerAlarmWrite</span><span class="p">(</span><span class="n">hw_timer_t</span><span class="w"> </span><span class="o">*</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">alarm_value</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">autoreload</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+<ul>
+<li>
+<p>this function receives as <strong>first</strong> input the pointer to the timer, as <strong>second</strong> the value of the counter in which the interrupt should be generated, and as <strong>third</strong> a flag indicating if the timer should automatically reload upon generating the interrupt.</p>
+</li>
+<li>
+<p>Regarding the second argument, remember that we set the prescaler in order for this to mean the number of microseconds after which the interrupt should occur. So, for this example, we assume that we want to generate an interrupt each second, and thus we pass the value of 1 000 000 microseconds, which is equal to 1 second. </p>
+<p>Important: Take in consideration that this value is specified in microseconds only if we specify the value 80 for the prescaler. We can use different prescaler values and in that case we need to do the calculations to know when the counter will reach a certain value.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>enable the timer</p>
+</li>
+<li>We finish our setup function by enabling the timer with a call to the timerAlarmEnable function, passing as input our timer variable.
+   <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">timerAlarmEnable</span><span class="p">(</span><span class="n">hw_timer_t</span><span class="w"> </span><span class="o">*</span><span class="n">timer</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<strong><em>example setup</em></strong>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timerBegin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">timerAttachInterrupt</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">onTimer</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">timerAlarmWrite</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">timerAlarmEnable</span><span class="p">(</span><span class="n">timer</span><span class="p">);</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+</ol>
+<h3 id="isr">ISR</h3>
+<p>The interrupt handling routine should have the IRAM_ATTR attribute, in order for the compiler to place the code in IRAM. Also, interrupt handling routines should only call functions also placed in IRAM</p>
+<p>As usual, since this counter <strong>variable will be shared amongst the main loop and the ISR</strong>, then it needs to be <strong>declared with</strong> the <code>volatile</code> keyword, <strong>which avoids it being removed due to compiler optimizations</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"C:\Users\KolevBM\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.2\cores\esp32\esp32-hal-timer.h"</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"Arduino.h"</span><span class="cp"></span>
+
+<span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">interruptCounter</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">totalInterruptCounter</span><span class="p">;</span><span class="w"></span>
+
+<span class="n">hw_timer_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="n">portMUX_TYPE</span><span class="w"> </span><span class="n">timerMux</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">portMUX_INITIALIZER_UNLOCKED</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">IRAM_ATTR</span><span class="w"> </span><span class="nf">onTimer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">portENTER_CRITICAL_ISR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timerMux</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">interruptCounter</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">portEXIT_CRITICAL_ISR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timerMux</span><span class="p">);</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timerBegin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w">   </span><span class="c1">//from 0 to 3, since we have 4 hardware timers)</span>
+<span class="w">  </span><span class="n">timerAttachInterrupt</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">onTimer</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">timerAlarmWrite</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">timerAlarmEnable</span><span class="p">(</span><span class="n">timer</span><span class="p">);</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interruptCounter</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">portENTER_CRITICAL</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timerMux</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">interruptCounter</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">portEXIT_CRITICAL</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timerMux</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">totalInterruptCounter</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"An interrupt as occurred. Total number: "</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">totalInterruptCounter</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h1 id="resources">Resources</h1>
+<ul>
+<li>
+<p><a href="https://techtutorialsx.com/2017/10/07/esp32-arduino-timer-interrupts/">https://techtutorialsx.com/2017/10/07/esp32-arduino-timer-interrupts/</a></p>
+</li>
+<li>
+<p><a href="https://www.geeksforgeeks.org/difference-between-spinlock-and-semaphore/">polling spinlock vs semaphore</a></p>
+</li>
+<li>
+<p><a href="https://techtutorialsx.com/2021/08/07/esp32-ticker-library/">https://techtutorialsx.com/2021/08/07/esp32-ticker-library/</a> </p>
+</li>
+</ul>
+<h1 id="use">USE <ticker.h></ticker.h></h1>
+<ul>
+<li>builtin library in Arduino core <code>Timer.h</code></li>
+<li>limitations:</li>
+<li>count seconds or milliseconds, no microseconds  </li>
+<li>useful for simple tasks</li>
+<li>no ISR needed</li>
+<li>no volatile ect.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Ticker.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// attach a LED to GPIO 21</span>
+<span class="cp">#define LED_PIN 2</span>
+
+<span class="n">Ticker</span><span class="w"> </span><span class="n">tickerSetHigh</span><span class="p">;</span><span class="w"></span>
+<span class="n">Ticker</span><span class="w"> </span><span class="n">tickerSetLow</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setPin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// every 25 ms, call setPin(0) </span>
+<span class="w">  </span><span class="n">tickerSetLow</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">setPin</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// every 26 ms, call setPin(1)</span>
+<span class="w">  </span><span class="n">tickerSetHigh</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">setPin</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: ESP32-LEDC" class="md-footer__link md-footer__link--prev" href="../../ESP32-LEDC/ESP32-LEDC/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              ESP32-LEDC
+            </div>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+<script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+</body>
+</html>

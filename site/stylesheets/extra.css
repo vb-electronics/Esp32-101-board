@@ -57,8 +57,8 @@
   	border-radius: 2px;}
 
 [data-md-color-scheme="electro"] {
-  --md-primary-fg-color:        #26A69A;
-  --md-accent-fg-color:	#388E3C;
+  --md-primary-fg-color:        #424242;
+  --md-accent-fg-color:	#37474F;
 }
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color:        #F57F17;

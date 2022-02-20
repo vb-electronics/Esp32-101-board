@@ -1,0 +1,7 @@
+{
+    "sketch": "ESP32-LEDC.ino",
+    "configuration": "PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none",
+    "board": "esp32:esp32:esp32",
+    "output": "C:\\Projects\\2022\\Notes\\ESP32-LEDC\\build",
+    "port": "COM5"
+}

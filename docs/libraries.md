@@ -4,7 +4,7 @@
 
 
 ### Вградени ESP32 библиотеки
-До библиотеките, които идват с инсталирането на addon-a за ESP32, както и други контролери, се достига по този път: `C:\Users\UserName\AppData\Local\Arduino\packages\esp32\hardware\esp32\2.0.2\libraries`.
+До библиотеките, които идват с инсталирането на addon-a за ESP32 се достига по този път: `C:\Users\UserName\AppData\Local\Arduino\packages\esp32\hardware\esp32\2.0.2\libraries`.
 Краткият път може да варира, но структурата е подобна на показаната по-долу. Имайте предвид, че папката `AppData` не се вижда във файловия мениджър, затова въведете директно в адресната лента `C:\Users\YourUserName\AppData`.
 ```
 C:\Users
@@ -36,4 +36,3 @@ C:\Users
 ### инсталация от zip
 
 ## изтриване
- 	

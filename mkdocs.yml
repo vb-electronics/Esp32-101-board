@@ -27,7 +27,12 @@ nav:
     - 99. Демо: examples/99-demo.md
     
   - Референция I/O: gpio.md
-  
+  - Notes:
+    - ESP32_ADC: Notes/ESP32-ADC/ESP32-ADC.md
+    - ESP32-DAC: Notes/ESP32-DAC/ESP32-DAC.md
+    - ESP32-HAL: Notes/ESP32-HAL/ESP32-HAL.md
+    - ESP32-LEDC: Notes/ESP32-LEDC/ESP32-LEDC.md
+    - ESP32-TIMER: Notes/ESP32-TIMER/ESP32-TIMER.md
 theme:
   name: material
   icon:
@@ -64,6 +69,7 @@ plugins:
 markdown_extensions:
   - toc:
       title: "На тази страница"
+      toc_depth: 1-4
   - attr_list
   - md_in_html
   - admonition
