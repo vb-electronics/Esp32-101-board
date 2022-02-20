@@ -261,7 +261,71 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>02. Ротационен енкодер</h1>
-<p>пример за бутон</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Примерен код</label><label for="__tabbed_1_2">Принципна схема на свързване</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm">В този пример посокота на въртене на ротационния енкодер и състоянието на бутона му</span>
+<span class="cm">се показват на серийния монитор (Tools -&gt; Serial Monitor).</span>
+
+<span class="cm">Двата сигнала за посока и бутона (ENC-A, ENC-B и ENC-SW) са свързани съответно към пинове D13, D14 и D12.</span>
+<span class="cm">Използва се допълнителната библиотека "ESP32Encoder" на "madhephaestus",</span>
+<span class="cm">която трябва да се инсталира предварително (https://github.com/madhephaestus/ESP32Encoder/)</span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="c1">// включване на допълнителната библиотека за четене на ротационен енкодер</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ESP32Encoder.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// константи, описващи използваните пинове</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENC_A_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENC_B_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">14</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENC_SW_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// променливи, използвани при четенето</span>
+<span class="n">ESP32Encoder</span><span class="w"> </span><span class="n">encoder</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">encoderCount</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ENC_SW_state</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1">// настройване на пина на бутона като "вход"</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">ENC_SW_pin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// настройване на енкодерната библиотека</span>
+<span class="c1">//encoder.attachFullQuad(ENC_A_pin, ENC_B_pin);</span>
+<span class="c1">//encoder.attachHalfQuad(ENC_A_pin, ENC_B_pin);</span>
+<span class="n">encoder</span><span class="p">.</span><span class="n">attachSingleEdge</span><span class="p">(</span><span class="n">ENC_A_pin</span><span class="p">,</span><span class="w"> </span><span class="n">ENC_B_pin</span><span class="p">);</span><span class="w"></span>
+<span class="n">encoder</span><span class="p">.</span><span class="n">clearCount</span><span class="p">();</span><span class="w"></span>
+
+<span class="c1">// настройване на серийната комуникация</span>
+<span class="c1">// Забележка: в серийният монитор трябва да бъда избрана същата скорост</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1">// прочитане на състоянието на бутона (0/LOW при натиснат, 1/HIGH при отпуснат):</span>
+<span class="n">ENC_SW_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">ENC_SW_pin</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// прочитане на състоянието на енкодера</span>
+<span class="n">encoderCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">encoder</span><span class="p">.</span><span class="n">getCount</span><span class="p">();</span><span class="w"></span>
+
+<span class="c1">// показване на стойностите на серийния монитор</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"SWITCH= "</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">ENC_SW_state</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"</span><span class="se">\t\t</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"COUNT= "</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">encoderCount</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\t\t</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="schematic" src=""/></p>
+</div>
+</div>
+</input></input></div>
 </article>
 </div>
 </div>
