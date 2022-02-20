@@ -261,7 +261,59 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>06. Сензори за допир</h1>
-<p>пример за бутон</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Примерен код</label><label for="__tabbed_1_2">Принципна схема на свързване</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm">В този пример стойностите на сензорите за допир TS1, TS2, TS3</span>
+<span class="cm">се показват на серийния монитор (Tools -&gt; Serial Monitor).</span>
+
+<span class="cm">Трите сензора за допир (TS1, TS2 и TS3) са свързани съответно към пинове D27, D33 и D32.</span>
+<span class="cm">*/</span><span class="w"></span>
+
+<span class="c1">// константи, описващи използваните пинове</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TS1_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TS2_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TS3_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// променливи, използвани при четенето на сензорите</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">TS1_value</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">TS2_value</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">TS3_value</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1">// настройване на серийната комуникация</span>
+<span class="c1">// Забележка: в серийният монитор трябва да бъда избрана същата скорост</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1">// прочитане на стойностите на сензорите:</span>
+<span class="n">TS1_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">touchRead</span><span class="p">(</span><span class="n">TS1_pin</span><span class="p">);</span><span class="w"></span>
+<span class="n">TS2_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">touchRead</span><span class="p">(</span><span class="n">TS2_pin</span><span class="p">);</span><span class="w"></span>
+<span class="n">TS3_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">touchRead</span><span class="p">(</span><span class="n">TS3_pin</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// показване на стойностите на серийния монитор</span>
+<span class="c1">// (стойността намалява при допир)</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"TS1= "</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">TS1_value</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"</span><span class="se">\t\t</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"TS2= "</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">TS2_value</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"</span><span class="se">\t\t</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"TS3= "</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">TS3_value</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\t\t</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</input></input></div>
 </article>
 </div>
 </div>

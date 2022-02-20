@@ -261,7 +261,46 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>09. Фотодиод</h1>
-<p>пример за бутон</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Примерен код</label><label for="__tabbed_1_2">Принципна схема на свързване</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="o">*</span><span class="w"></span>
+<span class="n">В</span><span class="w"> </span><span class="n">този</span><span class="w"> </span><span class="n">пример</span><span class="w"> </span><span class="n">измерената</span><span class="w"> </span><span class="n">стойност</span><span class="w"> </span><span class="n">от</span><span class="w"> </span><span class="n">фототранзистора</span><span class="w"></span>
+<span class="n">се</span><span class="w"> </span><span class="n">показва</span><span class="w"> </span><span class="n">на</span><span class="w"> </span><span class="n">серийния</span><span class="w"> </span><span class="n">монитор</span><span class="w"> </span><span class="p">(</span><span class="n">Tools</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Serial</span><span class="w"> </span><span class="n">Monitor</span><span class="p">).</span><span class="w"></span>
+
+<span class="n">фототранзисторът</span><span class="w"> </span><span class="p">(</span><span class="n">PT</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">свързан</span><span class="w"> </span><span class="n">към</span><span class="w"> </span><span class="n">пин</span><span class="w"> </span><span class="n">D34</span><span class="p">.</span><span class="w"></span>
+<span class="o">*/</span><span class="w"></span>
+
+<span class="c1">// константи, описващи използваните пинове</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PT_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">34</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// променливи, използвани при четенето на фототранзистора</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">PT_value</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1">// настройване на серийната комуникация</span>
+<span class="c1">// Забележка: в серийният монитор трябва да бъда избрана същата скорост</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="c1">// прочитане на стойността на фототранзистора (между 0 и 4095):</span>
+<span class="n">PT_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">PT_pin</span><span class="p">);</span><span class="w"></span>
+
+<span class="c1">// показване на стойностите на серийния монитор</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"PT= "</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">PT_value</span><span class="p">);</span><span class="w"></span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\t\t</span><span class="s">"</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="schematic" src=""/></p>
+</div>
+</div>
+</input></input></div>
 </article>
 </div>
 </div>
